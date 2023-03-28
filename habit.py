@@ -11,7 +11,7 @@ class Habit(object):
         self.name = name
         self.creation_date = datetime.datetime.today()
         self.periodicity = periodicity
-        self._completed_in = [] # property to check the 
+        self._completed_in = [] # property to store the completion dates
         self._streak = None
         self.names_dictionary = {'d': 'daily', 'w': 'weekly'}
 

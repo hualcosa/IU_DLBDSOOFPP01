@@ -1,25 +1,24 @@
 from habit import Habit
-import sqlite3
-from sqlite3 import Error
+from agent import Agent
 
-
-def create_connection(db_file):
-    """ create a database connection to a SQLite database """
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
-    except Error as e:
-        print(e)
-    finally:
-        if conn:
-            conn.close()
     
 
 # initial tests
 if __name__ == '__main__':
-    create_connection(r"C:\sqlite\db\pythonsqlite.db")
-    h1 = Habit('run', 'd')
-    h2 = Habit('workout', 'w')
-    print(h1)
-    print(h2)
+    agent = Agent()
+    print("**** Welcome to Habit Monitor! ****")
+    print("This application comes with 5 prebuilt habits and one month of historical data.")
+    answer = str(input("Would you like to see the predefined habits? [Y/N]\n")).lower()
+    if answer == 'y':
+        agent.get_all_habits()
+    print('\nIf you wish to see how you can interact with the app, type: "help"')
+    while True:
+        input('What would you like to do next?\n')
+        break
+    
+
+    # create_connection(r"C:\sqlite\db\pythonsqlite.db")
+    # h1 = Habit('run', 'd')
+    # h2 = Habit('workout', 'w')
+    # print(h1)
+    # print(h2)
