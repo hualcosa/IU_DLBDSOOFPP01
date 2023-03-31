@@ -76,7 +76,7 @@ INSERT INTO habits_history (id, completion_date) VALUES
 (4, '2023-01-19'),
 (4, '2023-01-20'),
 (4, '2023-01-21'),
-(4, '2023-01-21'),
+(4, '2023-01-22'),
 (4, '2023-01-25'),
 (4, '2023-01-26'),
 (4, '2023-01-27'),
@@ -90,3 +90,17 @@ INSERT INTO habits_history (id, completion_date) VALUES
 (5, '2023-01-19'),
 (5, '2023-01-26');
 
+
+# tracks the longest streak of a habit
+CREATE TABLE habit_longest_streak (
+    id INTEGER NOT NULL,
+    periodicity CHAR,
+    amount INTEGER
+);
+
+INSERT INTO habit_longest_streak (id, periodicity, amount) VALUES
+(1, 'd', 12),
+(2, 'w', 5),
+(3, 'w', 3),
+(4, 'd', 19),
+(5, 'w', 4);

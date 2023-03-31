@@ -1,5 +1,5 @@
 import datetime
-
+from database import DB
 
 class Habit(object):
     def __init__(self, name, periodicity):
@@ -11,8 +11,8 @@ class Habit(object):
         self.name = name
         self.creation_date = datetime.datetime.today()
         self.periodicity = periodicity
-        self._completed_in = [] # property to store the completion dates
-        self._streak = None
+        self.completed_in = [] # property to store the completion dates
+        self.streak = 0
         self.names_dictionary = {'d': 'daily', 'w': 'weekly'}
 
         # defensive programming: checking whether the parameters have acceptable values
@@ -24,6 +24,17 @@ class Habit(object):
             assert len(self.name) > 0
         except:
             raise Exception('Name cannot be an empty string')
+    
+    def get_habit_id(self):
+        '''
+        Returns the habit id in the sqlite3 database
+        name <str>: habit name
+        '''
+        db = DB('habits.db')
+        query = f"SELECT id FROM habits WHERE name = '{self.name}'"
+        c = db.get_cursor()
+        c.execute(query)
+        return c.fetchone()[0]
         
     def __str__(self) -> str:
         
