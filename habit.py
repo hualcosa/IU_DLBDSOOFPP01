@@ -2,14 +2,18 @@ import datetime
 from database import DB
 
 class Habit(object):
-    def __init__(self, name, periodicity):
+    def __init__(self, name, periodicity, creation_date=None):
         '''
         Constructor method. Every habit created needs to have the following parameters:
         name <str> : the name of the habit
         periodicity <str> : accepted values are 'd' for daily or 'w' for weekly
+        creation_date<str>: optional. Used only to load historical data
         '''
         self.name = name
-        self.creation_date = datetime.datetime.today()
+        if creation_date:
+            self.creation_date = creation_date
+        else:
+            self.creation_date = datetime.datetime.today()
         self.periodicity = periodicity
         self.completed_in = [] # property to store the completion dates
         self.streak = 0

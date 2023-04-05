@@ -94,13 +94,12 @@ INSERT INTO habits_history (id, completion_date) VALUES
 # tracks the longest streak of a habit
 CREATE TABLE habit_longest_streak (
     id INTEGER NOT NULL,
-    periodicity CHAR,
     amount INTEGER
 );
 
-INSERT INTO habit_longest_streak (id, periodicity, amount) VALUES
-(1, 'd', 12),
-(2, 'w', 5),
-(3, 'w', 3),
-(4, 'd', 19),
-(5, 'w', 4);
+INSERT INTO habit_longest_streak (id, amount) VALUES
+(1, 12),
+(2, 5),
+(3, 3),
+(4, 19),
+(5, 4);
