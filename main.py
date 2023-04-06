@@ -18,7 +18,7 @@ if __name__ == '__main__':
         answer = input('What would you like to do next?\n').lower()
         if answer == "help":
             print('''
-            ATTENTION! To sucessffully execute the commands you sould NOT but quotation marks
+            ATTENTION! To sucessffully execute the commands you sould NOT use quotation marks
             when writing the habit name
 
             create_habit <habit_name> <habit_periodicity>
