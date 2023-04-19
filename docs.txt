@@ -1,4 +1,0 @@
-# install sqlite3 to your system
-# create virtual environment
-# add anaconda directory  to path
-install pip:
