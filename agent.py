@@ -198,7 +198,10 @@ class Agent(object):
         returns the logest streak for a habit
         name <str>: habit name
         '''
-        return self.habits[name].streak
+        try:
+            return self.habits[name].streak
+        except:
+            print("Invalid habit name. Try again with a valid habit name")
     
     def query_habits_database(self, custom_query):
         '''
